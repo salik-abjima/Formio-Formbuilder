@@ -1,0 +1,196 @@
+@import "~bootswatch/dist/cosmo/_variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootswatch/dist/cosmo/_bootswatch.scss";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+$accent-font-color: #DB324D;
+$border-color: #5a5a5a;
+
+$icon-color-1: #fff;
+$icon-color-2: #00711b;
+$icon-color-3: #FD5200;
+$icon-color-4: #72195A;
+$icon-color-5: #C42021;
+
+$icon-bg-1: #1B998B;
+$icon-bg-2: #275DAD;
+
+@mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+@mixin transition-mix($property: all, $duration: 0.2s, $timing: linear, $delay: 0s) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-delay: $delay;
+}
+.radio-toolbar{
+  label > input[type="radio"]{
+    opacity: 0;
+  position: fixed;
+  width: 0;
+  & + span{
+    width: 100%;
+    height: 100%;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  &:checked + span{
+    background-color: #96C7C1;
+    border-color: #3a4e4b;
+  }
+  }
+  label > input[type="checkbox"]{
+    opacity: 0;
+  position: fixed;
+  width: 0;
+  & + span {
+
+    border-radius: 4px;
+    padding: 2px 4px;
+  }
+  &:checked + span{
+    background-color: #96C7C1;
+    border-color: #3a4e4b;
+  }
+  }
+  .form-check-label {
+    display: inline-block;
+    background-color: #ddd;
+    
+    font-family: sans-serif, Arial;
+    font-size: 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+  }
+}
+.card-header{
+  border-top-right-radius:10px;
+  border-top-left-radius:10px;
+}
+
+.nav-radio{
+  .form-radio{
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: 5px;
+    padding: 2px 8px;
+  }
+}
+.btn-custom{
+  background-color: greenyellow;
+}
+
+.radio-toolbar input[type="radio"]:focus.radio-selected  + .form-check-label {
+  border: 2px dashed #444;
+}
+
+.radio-toolbar .form-check-label:hover {
+  background-color: #dfd;
+}
+
+.checkbox-effect-5:not(:checked) + label:before,
+.checkbox-effect-5:checked + label:before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid $border-color;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-right: 20px;
+  transform-origin: center center;
+  @include transition-mix;
+}
+
+.checkbox-effect-5:not(:checked) + label:after,
+.checkbox-effect-5:checked + label:after {
+  content: "\f00c";
+  font: {
+    family: fontawesome;
+    size: 10px;
+  }
+  display: flex;
+  height: 100%;
+  align-items:center;
+  @include position-absolute($left: 1px, $top: 0);
+  color: $icon-color-1;
+}
+
+.checkbox-effect-5:not(:checked) + label:after {
+  opacity: 0;
+}
+
+.checkbox-effect-5:checked + label:before {
+  transform: scale(1.5);
+  background-color: $icon-bg-2;
+  border-color: $icon-bg-2;
+  @include transition-mix($timing: cubic-bezier(0.57, 1.9, 0, 1.52));
+}
+
+.checkbox-effect-5:checked + label:after {
+  opacity: 1;
+  @include transition-mix($delay: 0.2s);
+}
+.other-complaint{
+  display: inline;
+
+}
+
+// checkbox 3
+
+.custom-check input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+.card-header{
+  background-color: #96C7C1;
+  .nav-link{
+    color: white;
+  }
+}
+.custom-button{
+  background-color: yellow;
+}
+.card{
+  border-radius: 10px;
+}
+.formio-form{
+  border-radius: 10px;
+}
+.table-overflow table tbody {
+  overflow: scroll !important;
+}
+.formio-component-first{
+display: inline-block;
+}
+.formio-component-second{
+  display: inline-block;
+}
+.formio-component-third{
+  display: inline-block;
+}
+.formio-component-values{
+  display: inline-block;
+}
+.formio-component-otherRadio{
+  display: inline-block;
+}
+.formio-component-pain  {
+  display: inline-block;
+}
+.formio-component-textField2  {
+  display: inline-block;
+}

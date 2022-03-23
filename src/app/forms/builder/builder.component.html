@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [ngClass]="{active: (i+1)===currentFormNumber}" *ngFor="let number of counter(totalForms); let i = index">
+        <a class="nav-link" style="cursor:pointer" (click)="getForm(i+1)">Form - {{i+1}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container mb-4">
+  <button class="btn btn-success mr-4"(click)="saveJson()">Save</button>
+  <button class="btn btn-primary"(click)="newForm()">Create New Form</button>
+</div>
+<div class="p-4">
+  <div class="d-flex flex-row-reverse">
+    <i style="color: red"  data-toggle="modal" data-target="#exampleModal" class="fa fa-trash"></i>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this form.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="deleteForm(currentFormNumber)"  data-dismiss="modal" type="button" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="p-4" style="width: 100vw">
+  <form-builder [form]="form" (change)="onChange($event)"></form-builder>
+</div>
+<hr/>
+<!-- <h3 class="text-center text-muted">As JSON Schema</h3>
+<div class="well jsonviewer">
+  <pre id="json"><code class="language-json" #json></code></pre>
+</div> -->
+<h3 class="text-center text-muted">As Rendered Form</h3>
+<div class="well jsonviewer">
+  <formio [form]="form" [refresh]="refreshForm"></formio>
+</div>

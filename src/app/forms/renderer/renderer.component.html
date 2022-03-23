@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-sm-5">
+    <p><a href="https://github.com/formio/angular-formio/wiki/Form-Renderer" class="btn btn-primary btn-block" target="_blank"><span class="fa fa-book"></span> Renderer Documentation</a></p>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Result</h5>
+        <div class="card bg-light p-3">
+          <formio [form]="{components: [
+            {
+              type: 'textfield',
+              label: 'FirstName',
+              key: 'firstName',
+              input: true
+            },
+            {
+              type: 'textfield',
+              label: 'LastName',
+              key: 'lastName',
+              input: true
+            },
+            {
+              type: 'email',
+              label: 'Email',
+              key: 'email',
+              input: true
+            },
+            {
+              type: 'button',
+              action: 'submit',
+              label: 'Submit',
+              theme: 'primary'
+            }
+          ]}" [submission]="{
+            data: {
+              firstName: 'Joe',
+              lastName: 'Smith',
+              email: 'joe@example.com'
+            }
+          }"></formio>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
