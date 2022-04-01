@@ -2,8 +2,8 @@ import { FormioRefreshValue } from "@formio/angular";
 import {
   Component,
   AfterViewInit,
-  ViewChild,
-  ElementRef,
+  // ViewChild,
+  // ElementRef,
   EventEmitter,
 } from "@angular/core";
 import { PrismService } from "../../Prism.service";
@@ -15,7 +15,7 @@ import { PrismService } from "../../Prism.service";
 })
 export class BuilderComponent implements AfterViewInit {
   //   @ViewChild('json', {static: true}) jsonElement?: ElementRef;
-  @ViewChild("code", { static: true }) codeElement?: ElementRef;
+  // @ViewChild("code", { static: true }) codeElement?: ElementRef;
   public form: Object;
   formioJson: any;
   formio: any;

@@ -36,7 +36,7 @@ import { DataComponent } from './data/data.component';
     FormioGrid,
     RouterModule.forRoot([
       {
-        path: '',
+        path: 'Home',
         component: HomeComponent
       },
       {
@@ -44,7 +44,7 @@ import { DataComponent } from './data/data.component';
         component: DataComponent
       },
       {
-        path: 'forms',
+        path: '',
         loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule)
       },
       {

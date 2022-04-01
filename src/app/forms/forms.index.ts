@@ -7,7 +7,7 @@ import { PdfComponent } from './pdf/pdf.component';
 import {CustomBuilderComponent} from "./custom-builder/builder.component";
 export const FORMS: any = [
   {
-    path: '',
+    path: 'renderer',
     redirectTo: 'renderer',
     pathMatch: 'full'
   },
@@ -17,7 +17,7 @@ export const FORMS: any = [
     component: RendererComponent
   },
   {
-    path: 'builder',
+    path: '',
     title: 'Form Builder',
     component: BuilderComponent
   },
